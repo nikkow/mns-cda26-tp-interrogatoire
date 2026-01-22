@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="h-screen flex flex-col bg-gray-100 dark:bg-neutral-950">
+  <!-- Header -->
+  <header class="bg-gray-800 dark:bg-neutral-900 text-white py-4 px-6 shadow-lg">
+    <h1 class="text-xl font-bold tracking-wide">🔦 Salle d'interrogatoire</h1>
+  </header>
+
+  <div class="flex flex-1 overflow-hidden">
+    <!-- Sidebar - Résumé de l'affaire -->
+    <aside class="w-80 bg-white dark:bg-neutral-900 border-r border-gray-200 dark:border-neutral-700 p-6 overflow-y-auto">
+      <h2 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">📁 Résumé de l'affaire</h2>
+      
+      <div class="space-y-4">
+        <div class="bg-gray-50 dark:bg-neutral-800 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Dossier N°</h3>
+          <p class="text-gray-800 dark:text-white font-semibold">2026-0119-A</p>
+        </div>
+        
+        <div class="bg-gray-50 dark:bg-neutral-800 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Suspect</h3>
+          <p class="text-gray-800 dark:text-white">John Doe</p>
+        </div>
+        
+        <div class="bg-gray-50 dark:bg-neutral-800 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Chef d'accusation</h3>
+          <p class="text-gray-800 dark:text-white">À déterminer</p>
+        </div>
+        
+        <div class="bg-gray-50 dark:bg-neutral-800 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Date de l'incident</h3>
+          <p class="text-gray-800 dark:text-white">19 janvier 2026</p>
+        </div>
+        
+        <div class="bg-gray-50 dark:bg-neutral-800 rounded-lg p-4">
+          <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Notes</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Aucune note pour le moment...</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Chat Area -->
+    <div class="flex-1 flex flex-col">
+      <!-- Zone conversationnelle (scrollable avec padding) -->
+      <div class="flex-1 overflow-y-auto p-6">
+        <ul class="space-y-5 max-w-3xl mx-auto">
+          <!-- Message système -->
+          <li class="max-w-lg flex gap-x-2 sm:gap-x-4">
+            <div class="bg-white border border-gray-200 rounded-2xl p-4 space-y-3 dark:bg-neutral-900 dark:border-neutral-700">
+              <h2 class="font-medium text-gray-800 dark:text-white">
+                👮 Bienvenue dans la salle d'interrogatoire
+              </h2>
+              <div class="space-y-1.5">
+                <p class="mb-1.5 text-sm text-gray-800 dark:text-white">
+                  Vous pouvez interroger le suspect en posant des questions comme :
+                </p>
+                <ul class="list-disc list-outside space-y-1.5 ps-3.5">
+                  <li class="text-sm text-gray-800 dark:text-white">
+                    Où étiez-vous le soir du 19 janvier ?
+                  </li>
+                  <li class="text-sm text-gray-800 dark:text-white">
+                    Connaissez-vous la victime ?
+                  </li>
+                  <li class="text-sm text-gray-800 dark:text-white">
+                    Pouvez-vous expliquer cette preuve ?
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <!-- Question de l'enquêteur -->
+          <li class="max-w-lg ms-auto flex justify-end gap-x-2 sm:gap-x-4">
+            <div class="grow text-end space-y-3">
+              <div class="inline-block bg-blue-600 rounded-2xl p-4 shadow-2xs">
+                <p class="text-sm text-white">
+                  Où étiez-vous le soir du 19 janvier ?
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <!-- Réponse du suspect -->
+          <li class="max-w-lg flex gap-x-2 sm:gap-x-4">
+            <div class="bg-white border border-gray-200 rounded-2xl p-4 space-y-3 dark:bg-neutral-900 dark:border-neutral-700">
+              <p class="text-sm text-gray-800 dark:text-white">
+                J'étais chez moi toute la soirée. Je regardais un film, je ne me souviens plus du titre...
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Champ de saisie -->
+      <div class="border-t border-gray-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 p-4">
+        <form class="max-w-3xl mx-auto">
+          <div class="flex gap-3">
+            <input 
+              type="text" 
+              placeholder="Posez votre question au suspect..." 
+              class="flex-1 rounded-xl border border-gray-300 dark:border-neutral-600 bg-gray-50 dark:bg-neutral-800 px-4 py-3 text-sm text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+            <button 
+              type="submit" 
+              class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-xl transition-colors duration-200 flex items-center gap-2"
+            >
+              <span>Envoyer</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
