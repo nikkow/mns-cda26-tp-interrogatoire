@@ -43,7 +43,7 @@
     <!-- Main Chat Area -->
     <div class="flex-1 flex flex-col">
       <!-- Zone conversationnelle (scrollable avec padding) -->
-      <div class="flex-1 overflow-y-auto p-6">
+      <div id="chat-container" class="flex-1 overflow-y-auto p-6">
         <ul class="space-y-5 max-w-3xl mx-auto">
           <!-- Message système -->
           <li class="max-w-lg flex gap-x-2 sm:gap-x-4">
@@ -116,4 +116,11 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const chatContainer = document.getElementById('chat-container');
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  });
+</script>
 {% endblock %}
