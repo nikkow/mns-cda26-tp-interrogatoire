@@ -25,7 +25,7 @@ Le suspect doit avoir :
 - une liste de mensonges ou omissions
 - 2 à 4 contradictions possibles à déclencher par questions (heures, lieux, objets, relations, alibi)
 
-Retournez UNIQUEMENT le JSON conforme au schéma.
+Retournez **UNIQUEMENT** le JSON conforme au schéma.
 """
 
 
