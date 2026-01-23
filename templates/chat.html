@@ -15,22 +15,22 @@
       <div class="space-y-4">
         <div class="bg-gray-50 dark:bg-neutral-800 rounded-lg p-4">
           <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Dossier N°</h3>
-          <p class="text-gray-800 dark:text-white font-semibold">2026-0119-A</p>
+          <p class="text-gray-800 dark:text-white font-semibold">{{ case.case_id }}</p>
         </div>
         
         <div class="bg-gray-50 dark:bg-neutral-800 rounded-lg p-4">
           <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Suspect</h3>
-          <p class="text-gray-800 dark:text-white">John Doe</p>
+          <p class="text-gray-800 dark:text-white">{{ case.suspect.name }}</p>
         </div>
         
         <div class="bg-gray-50 dark:bg-neutral-800 rounded-lg p-4">
           <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Chef d'accusation</h3>
-          <p class="text-gray-800 dark:text-white">À déterminer</p>
+          <p class="text-gray-800 dark:text-white">{{case.crime_type}}</p>
         </div>
         
         <div class="bg-gray-50 dark:bg-neutral-800 rounded-lg p-4">
           <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Date de l'incident</h3>
-          <p class="text-gray-800 dark:text-white">19 janvier 2026</p>
+          <p class="text-gray-800 dark:text-white">{{case.setting.date}}</p>
         </div>
       </div>
     </aside>
